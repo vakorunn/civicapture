@@ -4,6 +4,7 @@ import db from './database/Database'
 import { collection, getDocs } from 'firebase/firestore'
 
 import UploadButton from './components/UploadButton/UploadButton'
+import UpdateForm from './components/UpdateForm/UpdateForm'
 
 const App = () => {
   const [data, setData] = useState([])
@@ -32,6 +33,7 @@ const App = () => {
         }
       </ul>
       <UploadButton />
+      <UpdateForm />
     </div>
   )
 }

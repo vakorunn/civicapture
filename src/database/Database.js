@@ -7,10 +7,12 @@ const firebaseConfig = {
   projectId: "civicapture",
   storageBucket: "civicapture.appspot.com",
   messagingSenderId: "7380933476",
-  appId: "1:7380933476:web:ffdd1a2cd2b1e63e447871"
+  appId: "1:7380933476:web:ffdd1a2cd2b1e63e447871",
+  experimentalForceLongPolling: true
 };
 
 const app = initializeApp(firebaseConfig);
+//firebase.firestore().settings({ experimentalForceLongPolling: true });
 const db = getFirestore(app);
 
 export default db ;
