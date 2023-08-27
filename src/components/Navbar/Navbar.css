@@ -1,0 +1,25 @@
+.navbar {
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-element {
+    text-decoration: none;
+}
+
+.navbar-element__link {
+    text-decoration: none;
+    margin: 2rem;
+    font-size: 1.2rem;
+    transition: ease-in 0.3s;
+    color: #0077b6;
+}
+
+.navbar-element__link:hover {
+    transition: ease-out 0.3s;
+    font-size: 1.4rem;
+    color: #48cae4;
+}
