@@ -6,7 +6,7 @@ const MemberDetails = () => {
     const location = useLocation()
     //const { dni } = useParams()
     //const member = {id: dni, firstName: `Miembro ${dni}`, description: 'Lorem'}
-    const {memberData} = location.state
+    const { memberData } = location.state
     return (
         <div>
             <h2>Datos del Miembro</h2>
@@ -20,16 +20,21 @@ const MemberDetails = () => {
             <p>Provincia:{memberData.address.state}</p>
             <p>Departamento:{memberData.address.city}</p>
 
-            <h2>Datos de la Fiscalización</h2>
             <br />
+            <h2>Datos de la Fiscalización</h2>
             <p>Cargo:{memberData.ocupation.charge}</p>
             <p>Circuito:{memberData.ocupation.circuit}</p>
             <p>Lugar de Fiscalización:{memberData.ocupation.placeOfInspection}</p>
 
-            {/* <h2>Datos Padronales</h2>
             <br />
+            <h2>Datos Padronales</h2>
             <p>Estableciento:{memberData.votingPlace.establishment}</p>
-            <p></p> */}
+            <p>Direccion del Establecimiento:{memberData.votingPlace.votingAddress}</p>
+            <p>Districto:{memberData.votingPlace.district}</p>
+            <p>Circuito Electoral:{memberData.votingPlace.electoralCircuit}</p>
+            <p>Sección Electoral:{memberData.votingPlace.electoralSection}</p>
+            <p>Mesa:{memberData.votingPlace.table}</p>
+            <p>Orden:{memberData.votingPlace.order}</p>
             {/* <p>{member.description}</p> */}
         </div>
     )

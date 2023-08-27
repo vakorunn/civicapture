@@ -1,0 +1,16 @@
+.main-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-text {
+    font-size: 36px;
+    font-weight: bold;
+    background: rgb(120, 0, 255);
+    background: linear-gradient(60deg, rgba(120, 0, 255, 1) 6%, rgba(0, 184, 255, 1) 25%, rgba(120, 0, 255, 1) 71%, rgba(0, 255, 209, 1) 94%);
+    -webkit-background-clip: text;
+    /* Safari/Chrome */
+    background-clip: text;
+    color: transparent;
+}
