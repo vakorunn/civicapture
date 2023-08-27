@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const MemberDetails = () => {
     const location = useLocation()
@@ -35,7 +35,6 @@ const MemberDetails = () => {
             <p>Sección Electoral:{memberData.votingPlace.electoralSection}</p>
             <p>Mesa:{memberData.votingPlace.table}</p>
             <p>Orden:{memberData.votingPlace.order}</p>
-            {/* <p>{member.description}</p> */}
         </div>
     )
 }

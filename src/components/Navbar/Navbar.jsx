@@ -1,23 +1,27 @@
 import React from 'react'
 
+import './Navbar.css'
+
 import { NavLink } from 'react-router-dom'
+import MainTittle from  '../MainTittle/MainTittle'
 
 const Navbar = () => {
   return (
     <header>
+      <MainTittle />
       <nav>
-        <ul>
-          <li>
-            <NavLink className='link' to='/'>Inicio</NavLink>
+        <ul className='navbar'>
+          <li className='navbar-element'>
+            <NavLink className='navbar-element__link' to='/'>Inicio</NavLink>
           </li>
-          <li>
-            <NavLink className='link' to='/listaFiscales'>Lista de Fiscales</NavLink>
+          <li className='navbar-element'>
+            <NavLink className='navbar-element__link' to='/listaFiscales'>Lista de Fiscales</NavLink>
           </li>
-          <li>
-            <NavLink className='link' to='/añadirFiscal'>Añadir Fiscal</NavLink>
+          <li className='navbar-element'>
+            <NavLink className='navbar-element__link' to='/añadirFiscal'>Añadir Fiscal</NavLink>
           </li>
-          <li>
-            <NavLink className='link' to='/editarFiscal'>Editar Fiscal</NavLink>
+          <li className='navbar-element'>
+            <NavLink className='navbar-element__link' to='/editarFiscal'>Editar Fiscal</NavLink>
           </li>
         </ul>
       </nav>
