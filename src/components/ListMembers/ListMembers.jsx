@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import './ListMembers.css'
+
 import db from '../../database/Database'
 import { collection, getDocs } from 'firebase/firestore'
 import { Link } from 'react-router-dom'
@@ -21,8 +23,8 @@ const ListMembers = () => {
         fetchData()
     }, [])
     return (
-        <div>
-            <h2>Mis datos de Firebase</h2>
+        <div className='members-list-container'>
+            <h2 className='minor-tittle'>Listado de Fiscales</h2>
             <ul>
                 {
                     data.map(item => (
