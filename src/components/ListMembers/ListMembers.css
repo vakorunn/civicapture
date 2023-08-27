@@ -1,0 +1,9 @@
+.members-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.minor-tittle {
+    display: flex;
+    justify-content: center;
+}
