@@ -1,26 +1,8 @@
-.members-list-container {
-    display: flex;
-    flex-direction: column;
+.main-title {
+    text-align: center;
+    margin-top: 10px;
 }
 
-.minor-tittle {
-    display: flex;
-    justify-content: center;
-}
-
-.members-list-container table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px solid #ccc;
-}
-
-.members-list-container th,
-.members-list-container td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-.members-list-container th {
-    background-color: #f2f2f2;
+.minor-title {
+    font-weight: bold;
 }
