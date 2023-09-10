@@ -13,6 +13,7 @@ import MemberDetails from './components/MemberDetails/MemberDetails'
 import AddVihicle from './components/AddVihicle/AddVihicle'
 import UpdateVihicleForm from './components/UpdateVihicleForm/UpdateVihicleForm'
 import VehicleList from './components/VehicleList/VehicleList'
+import DriverDetails from './components/DriverDetails/DriverDetails'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/editarFiscal' element={<UpdateForm />}></Route>
           <Route path='/editarVehiculo' element={<UpdateVihicleForm />}></Route>
           <Route path='/listaVehiculos' element={<VehicleList />}></Route>
+          <Route path='/listaVehiculos/:dni' element={<DriverDetails />}></Route>
         </Routes>
       </BrowserRouter>
     </>
