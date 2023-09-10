@@ -3,40 +3,55 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 const MemberDetails = () => {
-    const location = useLocation()
-    //const { dni } = useParams()
-    //const member = {id: dni, firstName: `Miembro ${dni}`, description: 'Lorem'}
-    const { memberData } = location.state
-    return (
-        <div>
-            <h2>Datos del Miembro</h2>
-            <br />
-            <h2>Información Personal</h2>
-            <h3>Apellido y Nombre:{memberData.lastName} {memberData.firstName}</h3>
-            <h3>DNI:{memberData.dni}</h3>
-            <p>Fecha de Nacimiento:{memberData.birthday}</p>
-            <p>Numero de Telefono:{memberData.phoneNumber}</p>
-            <p>Dirección:{memberData.address.streetAddress}</p>
-            <p>Provincia:{memberData.address.state}</p>
-            <p>Departamento:{memberData.address.city}</p>
-
-            <br />
-            <h2>Datos de la Fiscalización</h2>
-            <p>Cargo:{memberData.ocupation.charge}</p>
-            <p>Circuito:{memberData.ocupation.circuit}</p>
-            <p>Lugar de Fiscalización:{memberData.ocupation.placeOfInspection}</p>
-
-            <br />
-            <h2>Datos Padronales</h2>
-            <p>Estableciento:{memberData.votingPlace.establishment}</p>
-            <p>Direccion del Establecimiento:{memberData.votingPlace.votingAddress}</p>
-            <p>Districto:{memberData.votingPlace.district}</p>
-            <p>Circuito Electoral:{memberData.votingPlace.electoralCircuit}</p>
-            <p>Sección Electoral:{memberData.votingPlace.electoralSection}</p>
-            <p>Mesa:{memberData.votingPlace.table}</p>
-            <p>Orden:{memberData.votingPlace.order}</p>
+  const location = useLocation()
+  const { memberData } = location.state
+  return (
+    <>
+      <div className="container">
+        <div className="main-title">
+          <h2>Información del Fiscal</h2>
         </div>
-    )
+        <div className="row">
+          <div className="main-title">
+            <p>Información Personal</p>
+          </div>
+          <div className="col">
+            <p>DNI: {memberData.dni}</p>
+            <p>Apellido y Nombre: {memberData.lastName} {memberData.firstName}</p>
+            <p>Fecha de Nacimiento: {memberData.birthday}</p>
+            <p>Numero de Telefono: {memberData.phoneNumber}</p>
+            <p>Ciudad: {memberData.address.city}</p>
+            <p>Provincia: {memberData.address.state}</p>
+            <p>Calle: {memberData.address.streetAddress}</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="main-title">
+            <p>Información de Fiscalización</p>
+          </div>
+          <div className="col">
+            <p>Cargo: {memberData.ocupation.charge}</p>
+            <p>Circuito: {memberData.ocupation.circuit}</p>
+            <p>Lugar a Fiscalizar: {memberData.ocupation.placeOfInspection}</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="main-title">
+            <p>Informacion Padronal</p>
+          </div>
+          <div className="col">
+            <p>Establecimiento: {memberData.votingPlace.establishment}</p>
+            <p>Dirección: {memberData.votingPlace.votingAddress}</p>
+            <p>Districto: {memberData.votingPlace.district}</p>
+            <p>Circuito Electoral: {memberData.votingPlace.electoralCircuit}</p>
+            <p>Seccion Electoral: {memberData.votingPlace.electoralSection}</p>
+            <p>Orden: {memberData.votingPlace.order}</p>
+            <p>Table: {memberData.votingPlace.table}</p>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default MemberDetails

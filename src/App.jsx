@@ -1,29 +1,35 @@
 import React from 'react'
 
-import ListMembers from './components/ListMembers/ListMembers'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import News from './components/News/News'
+import Navbar from './components/Navbar/Navbar'
+import ListMembers from './components/ListMembers/ListMembers'
+import AttorneyGeneralList from './components/AttorneyGeneralList/AttorneyGeneralList'
+import TableProsecutorList from './components/TableProsecutorList/TableProsecutorList'
 import UploadForm from './components/UploadForm/UploadForm'
 import UpdateForm from './components/UpdateForm/UpdateForm'
 import MemberDetails from './components/MemberDetails/MemberDetails'
-import AttorneyGeneralList from './components/AttorneyGeneralList/AttorneyGeneralList'
-import TableProsecutorList from './components/TableProsecutorList/TableProsecutorList'
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar'
+import AddVihicle from './components/AddVihicle/AddVihicle'
+import UpdateVihicleForm from './components/UpdateVihicleForm/UpdateVihicleForm'
+import VehicleList from './components/VehicleList/VehicleList'
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar></Navbar>
+        <Navbar />
         <Routes>
-          <Route path='/' element={<News />}></Route>
+          <Route path='/' element={<News/>}></Route>
           <Route path='/listaFiscales' element={<ListMembers />}></Route>
-          <Route path='/añadirFiscal' element={<UploadForm />}></Route>
-          <Route path='/editarFiscal' element={<UpdateForm />}></Route>
           <Route path='/listaFiscales/:dni' Component={MemberDetails}></Route>
           <Route path='/fiscalesMesa' element={<TableProsecutorList />} />
           <Route path='/fiscalesGenerales' element={<AttorneyGeneralList />} />
+          <Route path='/añadirFiscal' element={<UploadForm />}></Route>
+          <Route path='/añadirVehiculo' element={<AddVihicle />}></Route>
+          <Route path='/editarFiscal' element={<UpdateForm />}></Route>
+          <Route path='/editarVehiculo' element={<UpdateVihicleForm />}></Route>
+          <Route path='/listaVehiculos' element={<VehicleList />}></Route>
         </Routes>
       </BrowserRouter>
     </>

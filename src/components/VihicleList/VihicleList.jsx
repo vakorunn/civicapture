@@ -7,36 +7,35 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 
-const TableProsecutorList = () => {
+const VehicleList = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const query = collection(db, 'miembros');
-        const allQuery = await getDocs(query);
-        const document = allQuery.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setData(document.filter(item => (item.ocupation.charge === 'Fiscal de Mesa') || (item.ocupation.charge === 'FISCAL DE MESA')));
+        const query = collection(db, 'vehiculos')
+        const allQuery = await getDocs(query)
+        const document = allQuery.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+        setData(document)
       } catch (error) {
         console.log('Error durante la consulta ' + error);
       }
-    };
-    fetchData();
-  }, []);
+    }
+    fetchData()
+  }, [])
   return (
     <>
       <div className="container">
         <div className="main-title">
-          <h2>Fiscales de Mesa</h2>
+          <h2>Listado de Vehiculos</h2>
         </div>
         <table className='table table-striped'>
           <thead>
             <tr>
-              <th scope='col'>DNI</th>
-              <th scope='col'>Nombre</th>
-              <th scope='col'>Apellido</th>
-              <th scope='col'>Cargo</th>
-              <th scope='col'>Lugar a Fiscalizar</th>
+              <th scope='col'>Patente</th>
+              <th scope='col'>Modelo</th>
+              <th scope='col'>Fabricante</th>
+              <th scope='col'>Chofer</th>
               <th scope='col'>Info</th>
             </tr>
           </thead>
@@ -44,11 +43,10 @@ const TableProsecutorList = () => {
             {
               data.map(item => (
                 <tr key={item.id}>
-                  <td>{item.dni}</td>
-                  <td>{item.firstName}</td>
-                  <td>{item.lastName}</td>
-                  <td>{item.ocupation.charge}</td>
-                  <td>{item.ocupation.placeOfInspection}</td>
+                  <td>{item.patent}</td>
+                  <td>{item.model}</td>
+                  <td>{item.maker}</td>
+                  <td>{item.driver.lastName} {item.driver.firstName}</td>
                   <td>
                     <Link to={`/listaFiscales/${item.dni}`} state={{ memberData: item }}>
                       <button className='more-info'>
@@ -66,4 +64,4 @@ const TableProsecutorList = () => {
   )
 }
 
-export default TableProsecutorList
+export default VehicleList
