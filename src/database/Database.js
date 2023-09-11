@@ -7,12 +7,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCviWvMnwSJKpSxE6whZi0-xAiB1jQzmgs",
-  authDomain: "civicap-46385.firebaseapp.com",
-  projectId: "civicap-46385",
-  storageBucket: "civicap-46385.appspot.com",
-  messagingSenderId: "852936771570",
-  appId: "1:852936771570:web:09b83716dd1ad5f3dbcd6b"
+  apiKey: "AIzaSyDzUMcYP-OT35OVG6xqH0EOXewSqRT8mK4",
+  authDomain: "civicapture-f45ec.firebaseapp.com",
+  projectId: "civicapture-f45ec",
+  storageBucket: "civicapture-f45ec.appspot.com",
+  messagingSenderId: "1053121893799",
+  appId: "1:1053121893799:web:5314c0909d4053e059d282"
 };
 
 // Initialize Firebase
