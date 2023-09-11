@@ -15,6 +15,7 @@ import UpdateVihicleForm from './components/UpdateVihicleForm/UpdateVihicleForm'
 import VehicleList from './components/VehicleList/VehicleList'
 import DriverDetails from './components/DriverDetails/DriverDetails'
 import ListForCircuit from './components/ListForCircuit/ListForCircuit'
+import ListSelectCircuit from './components/ListSelectCircuit/ListSelectCircuit'
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path='/listaVehiculos' element={<VehicleList />}></Route>
           <Route path='/listaVehiculos/:dni' element={<DriverDetails />}></Route>
           <Route path='/listarCircuitos' element={<ListForCircuit />}></Route>
+          <Route path='/seleccionarCircuito' element={<ListSelectCircuit />}></Route>
         </Routes>
       </BrowserRouter>
     </>
