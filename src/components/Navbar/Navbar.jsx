@@ -19,6 +19,9 @@ const Navbar = () => {
                             <li className='nav-item'>
                                 <NavLink to={'/listaVehiculos'} className={'nav-link'} aria-current='page'>Listar Vehiculos</NavLink>
                             </li>
+                            <li className='nav-item'>
+                                <NavLink to={'/listarCircuitos'} className={'nav-link'} aria-current='page'>Listar Circuitos</NavLink>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Listar Fiscales
