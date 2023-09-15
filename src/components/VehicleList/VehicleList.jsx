@@ -49,8 +49,8 @@ const VehicleList = () => {
                   <td>{item.driver.lastName} {item.driver.firstName}</td>
                   <td>
                     <Link to={`/listaVehiculos/${item.driver.dni}`} state={{ memberData: item }}>
-                      <button className='more-info'>
-                        <FontAwesomeIcon icon={faEye} style={{ color: "#891cc4" }} />
+                      <button className='btn btn-primary'>
+                        <FontAwesomeIcon icon={faEye} />
                       </button>
                     </Link>
                   </td>

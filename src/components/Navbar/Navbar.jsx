@@ -19,6 +19,9 @@ const Navbar = () => {
                             <li className='nav-item'>
                                 <NavLink to={'/listaVehiculos'} className={'nav-link'} aria-current='page'>Listar Vehiculos</NavLink>
                             </li>
+                            <li className='nav-item'>
+                                <NavLink to={'/equipos'} className={'nav-link'} aria-current='page'>Equipos</NavLink>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Circuitos
@@ -58,6 +61,9 @@ const Navbar = () => {
                                     </li>
                                     <li>
                                         <NavLink className={'dropdown-item'} to={'/añadirVehiculo'}>Alta de Vehiculos</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink className={'dropdown-item'} to={'/crearEquipo'}>Alta de Equipo</NavLink>
                                     </li>
                                 </ul>
                             </li>

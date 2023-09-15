@@ -16,6 +16,9 @@ import VehicleList from './components/VehicleList/VehicleList'
 import DriverDetails from './components/DriverDetails/DriverDetails'
 import ListForCircuit from './components/ListForCircuit/ListForCircuit'
 import ListSelectCircuit from './components/ListSelectCircuit/ListSelectCircuit'
+import Teams from './components/Teams/Teams'
+import TeamDetails from './components/TeamDetails/TeamDetails'
+import CreateTeams from './components/CreateTeams/CreateTeams'
 
 const App = () => {
   return (
@@ -36,6 +39,9 @@ const App = () => {
           <Route path='/listaVehiculos/:dni' element={<DriverDetails />}></Route>
           <Route path='/listarCircuitos' element={<ListForCircuit />}></Route>
           <Route path='/seleccionarCircuito' element={<ListSelectCircuit />}></Route>
+          <Route path='/equipos' element={<Teams />}></Route>
+          <Route path='/equipos/:teamCode' element={<TeamDetails />}></Route>
+          <Route path='/crearEquipo' element={<CreateTeams />}></Route>
         </Routes>
       </BrowserRouter>
     </>
