@@ -15,7 +15,7 @@ const UpdateForm = () => {
             const membersRef = collection(db, 'miembros');
             const q = query(membersRef, where('dni', '==', dniToUpdate));
             const querySnapshot = await getDocs(q);
-
+            
             if (!querySnapshot.empty) {
                 const memberDoc = querySnapshot.docs[0];
                 setMemberData(memberDoc.data());
@@ -31,7 +31,7 @@ const UpdateForm = () => {
         const { name, value } = event.target;
         setMemberData((prevData) => ({
             ...prevData,
-            [name]: value
+            [name]: value.toUpperCase()
         }));
     };
 
@@ -133,7 +133,7 @@ const UpdateForm = () => {
                     <label>Orden </label>
                     <input type="text" name='order' value={memberData.votingPlace.order} onChange={handleInputChange} />
                     <br /><br />
-                    {/* <button type="button" onClick={updateMemberData}>Actualizar Datos</button> */}
+                    <button type="button" onClick={updateMemberData}>Actualizar Datos</button>
                 </form>
             )}
         </div>

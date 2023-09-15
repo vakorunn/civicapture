@@ -19,6 +19,7 @@ import ListSelectCircuit from './components/ListSelectCircuit/ListSelectCircuit'
 import Teams from './components/Teams/Teams'
 import TeamDetails from './components/TeamDetails/TeamDetails'
 import CreateTeams from './components/CreateTeams/CreateTeams'
+import AddTeamMember from './components/AddTeamMember/AddTeamMember'
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
           <Route path='/equipos' element={<Teams />}></Route>
           <Route path='/equipos/:teamCode' element={<TeamDetails />}></Route>
           <Route path='/crearEquipo' element={<CreateTeams />}></Route>
+          <Route path='/añadirMiembro' element={<AddTeamMember />}></Route>
         </Routes>
       </BrowserRouter>
     </>
