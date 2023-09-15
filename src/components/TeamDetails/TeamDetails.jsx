@@ -81,6 +81,9 @@ const TeamDetails = () => {
           </tbody>
         </table>
       </div>
+      <Link to={`/añadirMiembro`}>
+        <button className='btn btn-success'>Añadir Miembro al Equipo</button>
+      </Link>
     </div>
   )
 }
