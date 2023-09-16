@@ -46,9 +46,9 @@ const VehicleList = () => {
                   <td>{item.patent}</td>
                   <td>{item.model}</td>
                   <td>{item.maker}</td>
-                  <td>{item.driver.lastName} {item.driver.firstName}</td>
+                  <td>{item.lastName} {item.firstName}</td>
                   <td>
-                    <Link to={`/listaVehiculos/${item.driver.dni}`} state={{ memberData: item }}>
+                    <Link to={`/listaVehiculos/${item.dni}`} state={{ memberData: item }}>
                       <button className='btn btn-primary'>
                         <FontAwesomeIcon icon={faEye} />
                       </button>

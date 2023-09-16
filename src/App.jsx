@@ -8,7 +8,6 @@ import ListMembers from './components/ListMembers/ListMembers'
 import AttorneyGeneralList from './components/AttorneyGeneralList/AttorneyGeneralList'
 import TableProsecutorList from './components/TableProsecutorList/TableProsecutorList'
 import UploadForm from './components/UploadForm/UploadForm'
-import UpdateForm from './components/UpdateForm/UpdateForm'
 import MemberDetails from './components/MemberDetails/MemberDetails'
 import AddVihicle from './components/AddVihicle/AddVihicle'
 import UpdateVihicleForm from './components/UpdateVihicleForm/UpdateVihicleForm'
@@ -20,6 +19,7 @@ import Teams from './components/Teams/Teams'
 import TeamDetails from './components/TeamDetails/TeamDetails'
 import CreateTeams from './components/CreateTeams/CreateTeams'
 import AddTeamMember from './components/AddTeamMember/AddTeamMember'
+import UpdateForm from './components/UpdateForm/UpdateForm'
 
 const App = () => {
   return (

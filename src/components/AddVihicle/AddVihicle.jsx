@@ -37,11 +37,9 @@ const AddVihicle = () => {
         model: formData.model,
         maker: formData.maker,
         color: formData.color,
-        driver: {
-          dni: formData.dni,
-          lastName: formData.lastName,
-          firstName: formData.firstName
-        }
+        dni: formData.dni,
+        lastName: formData.lastName,
+        firstName: formData.firstName
       };
 
       console.log(newDocumentData);
@@ -113,7 +111,7 @@ const AddVihicle = () => {
           </div>
         </form>
         <button onClick={addNewDocument} className='btn btn-primary mb-4'>
-          <span>Añadir Fisal</span>
+          <span>Añadir Vahiculo</span>
           <span></span>
         </button>
       </div>

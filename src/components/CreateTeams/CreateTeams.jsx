@@ -33,12 +33,10 @@ const CreateTeams = () => {
                 circuit: formData.circuit,
                 establishment: formData.establishment,
                 teamCode: formData.teamCode,
-                leader: {
-                    charge: formData.charge,
-                    dni: formData.dni,
-                    firstName: formData.firstName,
-                    lastName: formData.lastName
-                },
+                charge: formData.charge,
+                dni: formData.dni,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
                 members: formData.members
             };
 

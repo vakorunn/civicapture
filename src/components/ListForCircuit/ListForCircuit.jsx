@@ -37,7 +37,7 @@ const ListForCircuit = () => {
           <h3>Circuito: {circuito}</h3>
           <ul>
             {miembros
-              .filter((miembro) => miembro.ocupation.circuit === circuito)
+              .filter((miembro) => miembro.circuit === circuito)
               .map((miembro) => (
                 <li key={miembro.dni}>
                   <div>

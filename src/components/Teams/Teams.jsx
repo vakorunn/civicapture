@@ -44,7 +44,7 @@ const Teams = () => {
               <tr key={item.id}>
                 <td>{item.circuit}</td>
                 <td>{item.establishment}</td>
-                <td>{item.leader.firstName} {item.leader.lastName}</td>
+                <td>{item.firstName} {item.lastName}</td>
                 <td>
                   <Link to={`/equipos/${item.teamCode}`} state={{teamData: item}}>
                     <button className='btn btn-primary'>

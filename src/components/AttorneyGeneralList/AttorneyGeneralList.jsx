@@ -16,7 +16,7 @@ const AttorneyGeneralList = () => {
         const query = collection(db, 'miembros');
         const allQuery = await getDocs(query);
         const document = allQuery.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setData(document.filter(item => (item.ocupation.charge === 'Fiscal General') || (item.ocupation.charge === 'FISCAL GENERAL')));
+        setData(document.filter(item => (item.charge === 'Fiscal General') || (item.charge === 'FISCAL GENERAL')));
       } catch (error) {
         console.log('Error durante la consulta ' + error);
       }
@@ -47,12 +47,12 @@ const AttorneyGeneralList = () => {
                   <td>{item.dni}</td>
                   <td>{item.firstName}</td>
                   <td>{item.lastName}</td>
-                  <td>{item.ocupation.charge}</td>
-                  <td>{item.ocupation.placeOfInspection}</td>
+                  <td>{item.charge}</td>
+                  <td>{item.placeOfInspection}</td>
                   <td>
                     <Link to={`/listaFiscales/${item.dni}`} state={{ memberData: item }}>
-                      <button className='more-info'>
-                        <FontAwesomeIcon icon={faEye} style={{ color: "#891cc4" }} />
+                      <button className='btn btn-primary'>
+                        <FontAwesomeIcon icon={faEye} />
                       </button>
                     </Link>
                   </td>

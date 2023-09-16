@@ -22,14 +22,14 @@ const TeamDetails = () => {
               <p className='m-auto p-2'>Codigo del Equipo: {teamData.teamCode}</p>
             </div>
             <div className="col-6 border border-primary d-flex justify-content-center">
-              <p className='m-auto p-2'>Cargo: {teamData.leader.charge}</p>
+              <p className='m-auto p-2'>Cargo: {teamData.charge}</p>
             </div>
           </div>
           <div className="col-6 border border-primary d-flex justify-content-center">
-            <p className='m-auto p-2'>DNI: {teamData.leader.dni}</p>
+            <p className='m-auto p-2'>DNI: {teamData.dni}</p>
           </div>
           <div className="col-6 border border-primary d-flex justify-content-center">
-            <p className='m-auto p-2'>Apellido y Nombre: {teamData.leader.lastName} {teamData.leader.firstName}</p>
+            <p className='m-auto p-2'>Apellido y Nombre: {teamData.lastName} {teamData.firstName}</p>
           </div>
         </div>
       </div>

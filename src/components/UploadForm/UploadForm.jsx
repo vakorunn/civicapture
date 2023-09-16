@@ -45,25 +45,19 @@ const UploadForm = () => {
         lastName: formData.lastName,
         birthday: formData.birthday,
         phoneNumber: formData.phoneNumber,
-        address: {
-          city: formData.city,
-          state: formData.state,
-          streetAddress: formData.streetAddress
-        },
-        ocupation: {
-          circuit: formData.circuit,
-          charge: formData.charge,
-          placeOfInspection: formData.placeOfInspection
-        },
-        votingPlace: {
-          establishment: formData.establishment,
-          votingAddress: formData.votingAddress,
-          district: formData.district,
-          electoralCircuit: formData.electoralCircuit,
-          electoralSection: formData.electoralSection,
-          table: formData.table,
-          order: formData.order
-        }
+        city: formData.city,
+        state: formData.state,
+        streetAddress: formData.streetAddress,
+        circuit: formData.circuit,
+        charge: formData.charge,
+        placeOfInspection: formData.placeOfInspection,
+        establishment: formData.establishment,
+        votingAddress: formData.votingAddress,
+        district: formData.district,
+        electoralCircuit: formData.electoralCircuit,
+        electoralSection: formData.electoralSection,
+        table: formData.table,
+        order: formData.order
       };
 
       await addDoc(collectionRef, newDocumentData);

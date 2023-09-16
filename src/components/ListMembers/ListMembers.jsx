@@ -49,8 +49,8 @@ const ListMembers = () => {
                   <td>{item.dni}</td>
                   <td>{item.firstName}</td>
                   <td>{item.lastName}</td>
-                  <td>{item.ocupation.charge}</td>
-                  <td>{item.ocupation.placeOfInspection}</td>
+                  <td>{item.charge}</td>
+                  <td>{item.placeOfInspection}</td>
                   <td>
                     <Link to={`/listaFiscales/${item.dni}`} state={{ memberData: item }}>
                       <button className='btn btn-primary'>
