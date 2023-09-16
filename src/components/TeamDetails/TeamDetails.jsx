@@ -81,7 +81,7 @@ const TeamDetails = () => {
           </tbody>
         </table>
       </div>
-      <Link to={`/añadirMiembro`} state={{teamData: item}}>
+      <Link to={`/añadirMiembro`} state={{teamData: teamData}}>
         <button className='btn btn-success'>Añadir Miembro al Equipo</button>
       </Link>
     </div>
