@@ -51,8 +51,8 @@ const TableProsecutorList = () => {
                   <td>{item.placeOfInspection}</td>
                   <td>
                     <Link to={`/listaFiscales/${item.dni}`} state={{ memberData: item }}>
-                      <button className='more-info'>
-                        <FontAwesomeIcon icon={faEye} style={{ color: "#891cc4" }} />
+                      <button className='btn btn-primary'>
+                        <FontAwesomeIcon icon={faEye} />
                       </button>
                     </Link>
                   </td>
