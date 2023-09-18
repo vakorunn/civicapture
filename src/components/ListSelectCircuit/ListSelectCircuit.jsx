@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import db from '../../database/Database';
 import { collection, getDocs } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 const ListSelectCircuit = () => {
     const [circuitos, setCircuitos] = useState([]);
@@ -14,10 +17,8 @@ const ListSelectCircuit = () => {
                 const circuitosSet = new Set();
 
                 querySnapshot.forEach((doc) => {
-                    const ocupation = doc.data().ocupation;
-                    if (ocupation && ocupation.circuit) {
-                        circuitosSet.add(ocupation.circuit);
-                    }
+                    const ocupation = doc.data();
+                    circuitosSet.add(ocupation.circuit)
                 });
 
                 const circuitosArray = Array.from(circuitosSet).sort();
@@ -42,7 +43,7 @@ const ListSelectCircuit = () => {
             const querySnapshot = await getDocs(collection(db, 'miembros'));
             const members = querySnapshot.docs
                 .map((doc) => doc.data())
-                .filter((miembro) => miembro.ocupation.circuit === selectedDistrict); // Corregido aquí
+                .filter((miembro) => miembro.circuit === selectedDistrict); // Corregido aquí
             setMiembros(members);
         } catch (error) {
             console.error('Error al obtener miembros:', error);
@@ -66,20 +67,32 @@ const ListSelectCircuit = () => {
                 </select>
                 {selectedCircuito && (
                     <div>
-                        <h3>Circuito: {selectedCircuito}</h3>
+                        <div className="main-title">
+                            <h3>Circuito: {selectedCircuito}</h3>
+                        </div>
                         <ul>
                             {miembros.map((miembro) => (
-                                <li key={miembro.dni}>
-                                    <div>
-                                        <strong>DNI:</strong> {miembro.dni}
+                                <div className="row border border-primary mb-2 p-2" key={miembro.dni}>
+                                    <div className="col-4 m-auto">
+                                        <p className='m-auto'>Apellido y Nombre: {miembro.lastName} {miembro.firstName}</p>
                                     </div>
-                                    <div>
-                                        <strong>Apellido:</strong> {miembro.lastName}
+                                    <div className="col-3 m-auto">
+                                        <p>Cargo: {miembro.charge}</p>
                                     </div>
-                                    <div>
-                                        <strong>Nombre:</strong> {miembro.firstName}
+                                    <div className="col-3 m-auto">
+                                        <p>Telefono: {miembro.phoneNumber}</p>
                                     </div>
-                                </li>
+                                    <div className="col-2 m-auto">
+                                        <p className='m-auto'>
+                                            <Link to={`/listaFiscales/${miembro.dni}`} state={{ memberData: miembro }}>
+                                                <button className='btn btn-primary'>
+                                                    <FontAwesomeIcon icon={faEye} />
+                                                </button>
+                                            </Link>
+                                        </p>
+                                    </div>
+                                </div>
+
                             ))}
                         </ul>
                     </div>
