@@ -25,7 +25,7 @@ const UpdateForm = () => {
     const searchMember = async () => {
         try {
             const memberRef = collection(db, 'miembros')
-            const querySnapshot = await getDocs(query(memberRef, where('dni', '==', '41720940')))
+            const querySnapshot = await getDocs(query(memberRef, where('dni', '==', dniToUpdate)))
 
             if (!querySnapshot.empty) {
                 MySwal.fire({
