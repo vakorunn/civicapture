@@ -6,28 +6,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 const ListForEstablishment = () => {
-    const [establecimientos, setEstablecimientos] = useState([]);
+    const [placesOfInspection, setPlacesOfInspection] = useState([]);
     const [miembros, setMiembros] = useState([]);
-    const [selectedEstablecimiento, setSelectedEstablecimiento] = useState('');
+    const [selectedPlaceOfInspection, setSelectedPlaceOfInspection] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const querySnapshot = await getDocs(collection(db, 'miembros'));
-                const establecimientosSet = new Set();
+                const placesOfInspectionSet = new Set();
 
                 querySnapshot.forEach((doc) => {
-                    const establishment = doc.data().establishment;
-                    if (establishment) {
-                        establecimientosSet.add(establishment);
+                    const placeOfInspection = doc.data().placeOfInspection;
+                    if (placeOfInspection) {
+                        placesOfInspectionSet.add(placeOfInspection);
                     }
                 });
 
-                const establecimientosArray = Array.from(establecimientosSet).sort();
-                setEstablecimientos(establecimientosArray);
+                const placesOfInspectionArray = Array.from(placesOfInspectionSet).sort();
+                setPlacesOfInspection(placesOfInspectionArray);
                 setMiembros(querySnapshot.docs.map((doc) => doc.data()));
             } catch (error) {
-                console.error('Error al listar establecimientos:', error);
+                console.error('Error al listar lugares de inspección:', error);
             }
         };
 
@@ -35,8 +35,8 @@ const ListForEstablishment = () => {
     }, []);
 
     const handleSelectChange = async (event) => {
-        const selectedEstablishment = event.target.value;
-        setSelectedEstablecimiento(selectedEstablishment);
+        const selectedPlace = event.target.value;
+        setSelectedPlaceOfInspection(selectedPlace);
 
         setMiembros([]);
 
@@ -44,7 +44,7 @@ const ListForEstablishment = () => {
             const querySnapshot = await getDocs(collection(db, 'miembros'));
             const members = querySnapshot.docs
                 .map((doc) => doc.data())
-                .filter((miembro) => miembro.establishment === selectedEstablishment);
+                .filter((miembro) => miembro.placeOfInspection === selectedPlace);
             setMiembros(members);
         } catch (error) {
             console.error('Error al obtener miembros:', error);
@@ -55,21 +55,21 @@ const ListForEstablishment = () => {
         <>
             <div className="container">
                 <div className="main-title mt-3">
-                    <h2>Listado por Establecimiento</h2>
+                    <h2>Listado por Lugar de Inspección</h2>
                 </div>
-                <label htmlFor="establecimiento">Selecciona un establecimiento:</label>
-                <select id="establecimiento" value={selectedEstablecimiento} onChange={handleSelectChange}>
+                <label htmlFor="placeOfInspection">Selecciona un lugar de inspección:</label>
+                <select id="placeOfInspection" value={selectedPlaceOfInspection} onChange={handleSelectChange}>
                     <option value="">Seleccionar...</option>
-                    {establecimientos.map((establecimiento) => (
-                        <option key={establecimiento} value={establecimiento}>
-                            {establecimiento}
+                    {placesOfInspection.map((place) => (
+                        <option key={place} value={place}>
+                            {place}
                         </option>
                     ))}
                 </select>
-                {selectedEstablecimiento && (
+                {selectedPlaceOfInspection && (
                     <div>
                         <div className="main-title">
-                            <h3>Establecimiento: {selectedEstablecimiento}</h3>
+                            <h3>Lugar de Inspección: {selectedPlaceOfInspection}</h3>
                         </div>
                         <ul>
                             {miembros.map((miembro) => (
