@@ -22,6 +22,9 @@ const Navbar = () => {
                             <li className='nav-item'>
                                 <NavLink to={'/equipos'} className={'nav-link'} aria-current='page'>Equipos</NavLink>
                             </li>
+                            <li className='nav-item'>
+                                <NavLink to={'/listarEstablecimiento'} className={'nav-link'} aria-current='page'>Listar por Establecimiento</NavLink>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Circuitos
