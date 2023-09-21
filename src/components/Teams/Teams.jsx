@@ -34,7 +34,7 @@ const Teams = () => {
           <tr>
             <th scope='col'>Circuito</th>
             <th scope='col'>Establecimiento</th>
-            <th scope='col'>Lider</th>
+            <th scope='col'>Coordinador</th>
             <th scope='col'>Info</th>
           </tr>
         </thead>
@@ -44,7 +44,7 @@ const Teams = () => {
               <tr key={item.id}>
                 <td>{item.circuit}</td>
                 <td>{item.establishment}</td>
-                <td>{item.firstName} {item.lastName}</td>
+                <td>{item.coordinator}</td>
                 <td>
                   <Link to={`/equipos/${item.teamCode}`} state={{teamData: item}}>
                     <button className='btn btn-primary'>
