@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 const CreateTeams = () => {
     const initialFormData = {
+        coordinator: '',
         circuit: '',
         establishment: '',
         teamCode: '',
@@ -13,7 +14,7 @@ const CreateTeams = () => {
         dni: '',
         firstName: '',
         lastName: '',
-        members:[]
+        members: []
     }
     const [formData, setFormData] = useState(initialFormData)
 
@@ -30,6 +31,7 @@ const CreateTeams = () => {
             const collectionRef = collection(db, 'equipos');
 
             const newDocumentData = {
+                coordinator: formData.coordinator,
                 circuit: formData.circuit,
                 establishment: formData.establishment,
                 teamCode: formData.teamCode,
@@ -63,6 +65,14 @@ const CreateTeams = () => {
             </div>
             <form>
                 <div className="main-title mt-3">
+                    <p>Coordinador</p>
+                </div>
+                <div className='form-group col-md-auto mb-3'>
+                    <label htmlFor="coordinator">Coordinador</label>
+                    <input type="text" className='form-control' name='coordinator' id='coordinator' value={formData.coordinator} onChange={handleInputChange} />
+                </div>
+
+                <div className="main-title mb-3">
                     <p>Informacion del Equipo</p>
                 </div>
                 <div className='form-group col-md-auto mb-3'>

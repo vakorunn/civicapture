@@ -12,7 +12,21 @@ const TeamDetails = () => {
       <div className="main-title">
         <h2>Informacion del Equipo</h2>
       </div>
-      <div className="row border border-primary">
+
+      <div className="row border border-danger">
+        <div className="main-title">
+          <p>Coordinador del Equipo</p>
+        </div>
+        <div className="row-p-2 m-auto">
+          <div className="row p-3 m-auto">
+            <div className="col-12 border border-danger d-flex justify-content-center">
+              <p className="m-auto p-2">Coordinador: {teamData.coordinator}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row border border-primary mt-3">
         <div className="main-title">
           <p>Datos del Lider</p>
         </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import db from '../../database/Database'
 
-import { collection, doc, getDocs, getDoc, query, updateDoc, where } from 'firebase/firestore'
+import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore'
 import MySwal from 'sweetalert2'
 
 const UpdateForm = () => {
