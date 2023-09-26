@@ -21,6 +21,7 @@ import CreateTeams from './components/CreateTeams/CreateTeams'
 import AddTeamMember from './components/AddTeamMember/AddTeamMember'
 import UpdateForm from './components/UpdateForm/UpdateForm'
 import ListForEstablishment from './components/ListForEstablishment/ListForEstablishment'
+import AddToTeam from './components/AddToTeam/AddToTeam'
 
 const App = () => {
   return (
@@ -44,7 +45,7 @@ const App = () => {
           <Route path='/equipos' element={<Teams />}></Route>
           <Route path='/equipos/:teamCode' element={<TeamDetails />}></Route>
           <Route path='/crearEquipo' element={<CreateTeams />}></Route>
-          <Route path='/añadirMiembro' element={<AddTeamMember />}></Route>
+          <Route path='/añadirMiembro' element={<AddToTeam />}></Route>
           <Route path='/listarEstablecimiento' element={<ListForEstablishment />}></Route>
         </Routes>
       </BrowserRouter>
