@@ -7,7 +7,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <h2><NavLink to={'/'} className={'navbar-brand'}>CiviCapture</NavLink></h2>
+                    <h2><NavLink to={'/'} className={'navbar-brand'}>LLA SGO</NavLink></h2>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -20,7 +20,7 @@ const Navbar = () => {
                                 <NavLink to={'/listaVehiculos'} className={'nav-link'} aria-current='page'>Listar Vehiculos</NavLink>
                             </li>
                             <li className='nav-item'>
-                                <NavLink to={'/equipos'} className={'nav-link'} aria-current='page'>Equipos</NavLink>
+                                <NavLink to={'/equipos'} className={'nav-link'} aria-current='page'>Coord.</NavLink>
                             </li>
                             <li className='nav-item'>
                                 <NavLink to={'/listarEstablecimiento'} className={'nav-link'} aria-current='page'>Listar por Establecimiento</NavLink>

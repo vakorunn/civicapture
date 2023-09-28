@@ -96,7 +96,7 @@ const TeamDetails = () => {
         </table>
       </div>
       <Link to={`/añadirMiembro`} state={{teamData: teamData}}>
-        <button className='btn btn-success'>Añadir Miembro al Equipo</button>
+        <button className='btn btn-success mb-2'>Añadir Miembro al Equipo</button>
       </Link>
     </div>
   )

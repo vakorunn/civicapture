@@ -60,16 +60,6 @@ const AddToTeam = () => {
                     setFiscalData(doc.data())
                     console.log(doc.id);
                     console.log(doc.data());
-                    setFiscalLastName(doc.data().lastName)
-                    setFiscalFirstName(doc.data().firstName)
-                    setFiscalCharge(doc.data().charge)
-                    const newTeamMember = {
-                        memCharge: fiscalCharge,
-                        memLastName: fiscalLastName,
-                        memFirstName: fiscalFirstName,
-                        memDni: searchDni
-                    }
-                    setNewMember(newTeamMember)
                 })
             } else {
                 MySwal.fire({
@@ -123,6 +113,14 @@ const AddToTeam = () => {
             const docRef = doc(db, 'equipos', docRefToUpdate);
 
             // Usa la función 'arrayUnion' para agregar el nuevo miembro al array
+            const newFiscal = {
+                dni: fiscalData.dni,
+                charge: fiscalData.charge,
+                lastName: fiscalData.lastName,
+                firstName: fiscalData.firstName
+            }
+            setNewMember(newFiscal)
+            console.log(newMember);
             await updateDoc(docRef, {
                 members: arrayUnion(newMember),
             });
@@ -164,17 +162,17 @@ const AddToTeam = () => {
                 <div className="container">
                     <div className="mt-3">
                         <label htmlFor="fiscalCharge">Cargo</label>
-                        <input type="text" className="form-control" name="fiscalCharge" value={fiscalCharge} onChange={handleInputChange} />
+                        <input type="text" className="form-control" name="fiscalCharge" value={memberData.charge} onChange={handleInputChange} />
 
                         <label htmlFor="fiscalDNI">DNI</label>
                         <input type="text" className="form-control" name="fiscalDNI" value={searchDni} onChange={handleInputChange} />
 
                         <label htmlFor="fiscalFirstName">Nombre</label>
-                        <input type="text" className="form-control" name="fiscalFirstName" value={fiscalFirstName} onChange={handleInputChange} />
+                        <input type="text" className="form-control" name="fiscalFirstName" value={memberData.firstName} onChange={handleInputChange} />
 
                         <label htmlFor="fiscalLastName">Apellido</label>
-                        <input type="text" className="form-control" name="fiscalLastName" value={fiscalLastName} onChange={handleInputChange} />
-                        <button className="btn btn-primary mt-2" onClick={addNewMember}>Agregar Nuevo Miembro</button>
+                        <input type="text" className="form-control" name="fiscalLastName" value={memberData.lastName} onChange={handleInputChange} />
+                        <button className="btn btn-primary mt-2 mb-2" onClick={addNewMember}>Agregar Nuevo Miembro</button>
                     </div>
                 </div>
             )}
