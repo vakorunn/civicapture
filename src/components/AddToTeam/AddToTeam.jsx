@@ -162,16 +162,16 @@ const AddToTeam = () => {
                 <div className="container">
                     <div className="mt-3">
                         <label htmlFor="fiscalCharge">Cargo</label>
-                        <input type="text" className="form-control" name="fiscalCharge" value={memberData.charge} onChange={handleInputChange} />
+                        <input type="text" className="form-control" name="fiscalCharge" value={fiscalData.charge} onChange={handleInputChange} />
 
                         <label htmlFor="fiscalDNI">DNI</label>
                         <input type="text" className="form-control" name="fiscalDNI" value={searchDni} onChange={handleInputChange} />
 
                         <label htmlFor="fiscalFirstName">Nombre</label>
-                        <input type="text" className="form-control" name="fiscalFirstName" value={memberData.firstName} onChange={handleInputChange} />
+                        <input type="text" className="form-control" name="fiscalFirstName" value={fiscalData.firstName} onChange={handleInputChange} />
 
                         <label htmlFor="fiscalLastName">Apellido</label>
-                        <input type="text" className="form-control" name="fiscalLastName" value={memberData.lastName} onChange={handleInputChange} />
+                        <input type="text" className="form-control" name="fiscalLastName" value={fiscalData.lastName} onChange={handleInputChange} />
                         <button className="btn btn-primary mt-2 mb-2" onClick={addNewMember}>Agregar Nuevo Miembro</button>
                     </div>
                 </div>
