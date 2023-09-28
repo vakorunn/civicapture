@@ -45,7 +45,7 @@ const App = () => {
           <Route path='/equipos' element={<Teams />}></Route>
           <Route path='/equipos/:teamCode' element={<TeamDetails />}></Route>
           <Route path='/crearEquipo' element={<CreateTeams />}></Route>
-          <Route path='/añadirMiembro' element={<AddToTeam />}></Route>
+          <Route path='/añadirMiembro' element={<AddTeamMember />}></Route>
           <Route path='/listarEstablecimiento' element={<ListForEstablishment />}></Route>
         </Routes>
       </BrowserRouter>
